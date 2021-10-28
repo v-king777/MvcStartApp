@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcStartApp.Models;
+using MvcStartApp.Models.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,8 @@ namespace MvcStartApp
 
             services.AddDbContext<MvcStartAppContext>(options =>
             options.UseSqlServer(connection), ServiceLifetime.Singleton);
+
+            services.AddSingleton<IUserRepository, UserRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

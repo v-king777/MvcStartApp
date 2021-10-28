@@ -20,5 +20,7 @@ namespace MvcStartApp.Models.Db
         public string Email { get; set; }
 
         public string Phone { get; set; }
+
+        public DateTime JoinDate { get; set; }
     }
 }
