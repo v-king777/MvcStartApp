@@ -25,9 +25,14 @@ namespace MvcStartApp.Controllers
             return View(users);
         }
 
-
         [HttpGet]
         public IActionResult SignIn()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Registration()
         {
             return View();
         }

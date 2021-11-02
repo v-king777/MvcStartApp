@@ -2,6 +2,22 @@
     ViewData["Title"] = "Sign In";
 }
 
-<div class="text-center">
+<div class="text-center mb-4">
     <h1 class="display-4">Вход в систему</h1>
+</div>
+<div>
+    <form>
+        <div class="mb-4">
+            <label for="emailInput">Введите ваш адрес электронной почты:</label>
+            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+        </div>
+        <div class="mb-5">
+            <label for="passwordInput">Введите ваш пароль:</label>
+            <input type="password" class="form-control" id="passwordInput" placeholder="password">
+        </div>
+        <div class="text-center mb-4">
+            <button class="btn btn-primary btn-lg" type="submit">Войти</button>
+            <a class="btn btn-outline-primary btn-lg" asp-area="" asp-controller="Users" asp-action="Registration">Зарегистрироваться</a>
+        </div>
+    </form>
 </div>
