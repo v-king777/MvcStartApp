@@ -8,7 +8,7 @@ namespace MvcStartApp.Models.Repositories
 {
     public interface IUserRepository
     {
-        Task AddUser(User user);
+        Task AddUser(User newUser);
 
         Task<User[]> GetUsers();
     }

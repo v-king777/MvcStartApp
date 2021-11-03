@@ -16,16 +16,16 @@ namespace MvcStartApp.Models.Repositories
             _context = context;
         }
 
-        public async Task AddUser(User user)
+        public async Task AddUser(User newUser)
         {
-            user.Id = Guid.NewGuid();
-            user.JoinDate = DateTime.Now;
+            newUser.Id = Guid.NewGuid();
+            newUser.JoinDate = DateTime.Now;
 
-            var entry = _context.Entry(user);
+            var entry = _context.Entry(newUser);
 
             if (entry.State == EntityState.Detached)
             {
-                await _context.Users.AddAsync(user);
+                await _context.Users.AddAsync(newUser);
             }
 
             await _context.SaveChangesAsync();

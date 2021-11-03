@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MvcStartApp.Models.Db;
 using MvcStartApp.Models.Repositories;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,14 @@ namespace MvcStartApp.Controllers
         public IActionResult Registration()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Registration(User newUser)
+        {
+            await _repo.AddUser(newUser);
+
+            return View(newUser);
         }
     }
 }
