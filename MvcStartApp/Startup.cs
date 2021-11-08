@@ -30,7 +30,7 @@ namespace MvcStartApp
             string connection = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<MvcStartAppContext>(options =>
-            options.UseSqlServer(connection), ServiceLifetime.Singleton);
+                options.UseSqlServer(connection), ServiceLifetime.Singleton);
 
             services.AddSingleton<IUserRepository, UserRepository>();
         }
